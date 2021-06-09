@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="center">ToDo List</h1>
+
+        <div class="row">
+
+            <!-- Input Box -->
+            <div class="col-md-7">
+                <div class="mb-3">
+                    <label for="newTask" class="form-label">New Task</label>
+                    <input type="text" class="form-control" id="newTask" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">A short one line description of your task.</div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="col-md-5">
+                <div class="row">
+
+                    <!-- Add Button -->
+                    <div class="col-6 col-sm-3 col-md-6 p-1">
+                        <button class="btn btn-success col" disabled id="btnAdd">
+                            <i class="fas fa-plus-square"></i> Add
+                        </button>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="col-6 col-sm-3 col-md-6  p-1">
+                        <button class="btn btn-danger col" disabled id="btnReset">
+                            <i class="fas fa-backspace"></i> Reset
+                        </button>
+                    </div>
+
+                    <!-- Sort Button -->
+                    <div class="col-6 col-sm-3 col-md-6  p-1">
+                        <button class="btn btn-info col" disabled id="btnSort">
+                            <i class="fas fa-sort-amount-down"></i> Sort
+                        </button>
+                    </div>
+
+                    <!-- Cleanup Button -->
+                    <div class="col-6 col-sm-3 col-md-6  p-1">
+                        <button class="btn btn-warning col" disabled id="btnCleanup">
+                            <i class="fas fa-trash-alt"></i> Cleanup
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <ul class="row list-group list-group-flush m-2" id="ulTasks">
+        </ul>
+    </div>
+</body>
+
+</html>
