@@ -32,17 +32,36 @@
 
 <body>
 <div class="container">
-    <h1 align="center">ToDo List</h1>
+    <!--        -->
+    <h1 class="text-center">
+        ToDo
+        <small style="font-size: 40px" class="text-muted">List</small>
+    </h1>
+
+    <!-- Blockquotes -->
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p>
+                <br>“There is satisfaction," he said to Dalinar,
+                <br>"in creating a list of things you can actually accomplish,
+                <br>then removing them one at a time.”
+            </p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            Brandon Sanderson in <cite title="Source Title">Oathbringer</cite><br>
+        </figcaption>
+    </figure>
 
     <div class="row">
 
         <!-- Input Box -->
         <div class="col-md-7">
             <div class="mb-3">
-                <label for="inpNewTask" class="form-label">Create New Task</label>
+                <label for="inpNewTask" class="form-label">Create a new task</label>
                 <input type="text" class="form-control" id="inpNewTask" aria-describedby="newTaskHelp"
                        placeholder="Please enter your task...">
-                <small id="newTaskHelp" class="form-text text-muted">A short one line description of your task.</small>
+                <small id="newTaskHelp" class="form-text text-muted">A short one line description of your
+                    task.</small>
             </div>
         </div>
 

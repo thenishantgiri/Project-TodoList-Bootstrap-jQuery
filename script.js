@@ -5,7 +5,8 @@ let btnSort = $("#btnSort");
 let btnCleanup = $("#btnCleanup");
 let ulTasks = $("#ulTasks");
 
-btnAdd.click(() => {
+function addItem() {
+
     let listItem = $('<li>', {'class': 'list-group-item', text: inpNewTask.val()})
 
     //setting the class of list item to disabled (on click)
@@ -18,6 +19,14 @@ btnAdd.click(() => {
 
     //resetting the input box to empty string
     inpNewTask.val('')
-});
+}
+
+inpNewTask.keypress((key) => {
+    if (key.which == 13) {
+        addItem()
+    }
+})
+
+btnAdd.click(addItem());
 
 btnCleanup.click(() => inpNewTask.val(''))
