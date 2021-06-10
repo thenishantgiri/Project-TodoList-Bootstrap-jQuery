@@ -21,12 +21,17 @@ function addItem() {
     inpNewTask.val('')
 }
 
+function clearDone() {
+   $('#ulTasks .done').remove()
+}
+
+//Handling "enter" keypress
 inpNewTask.keypress((key) => {
-    if (key.which == 13) {
-        addItem()
-    }
+    if (key.which == 13) addItem()
 })
 
-btnAdd.click(()=>addItem());
+btnAdd.click(() => addItem());
 
-btnCleanup.click(() => inpNewTask.val(''))
+btnReset.click(() => inpNewTask.val(''))
+
+btnCleanup.click(() => clearDone())
