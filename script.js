@@ -25,6 +25,10 @@ function clearDone() {
    $('#ulTasks .done').remove()
 }
 
+function sortTask(){
+    $('#ulTasks .done').appendTo(ulTasks)
+}
+
 //Handling "enter" keypress
 inpNewTask.keypress((key) => {
     if (key.which == 13) addItem()
@@ -35,3 +39,5 @@ btnAdd.click(() => addItem());
 btnReset.click(() => inpNewTask.val(''))
 
 btnCleanup.click(() => clearDone())
+
+btnSort.click(()=>sortTask())
