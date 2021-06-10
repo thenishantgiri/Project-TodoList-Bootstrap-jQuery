@@ -22,11 +22,21 @@ function addItem() {
 }
 
 function clearDone() {
-   $('#ulTasks .done').remove()
+    $('#ulTasks .done').remove()
 }
 
-function sortTask(){
+function sortTask() {
     $('#ulTasks .done').appendTo(ulTasks)
+}
+
+function toggleInputButtons(valIsEmpty) {
+    if (valIsEmpty) {
+        btnReset.prop('disabled', true)
+        btnAdd.prop('disabled', true)
+    } else {
+        btnReset.prop('disabled', false)
+        btnAdd.prop('disabled', false)
+    }
 }
 
 //Handling "enter" keypress
@@ -34,10 +44,17 @@ inpNewTask.keypress((key) => {
     if (key.which == 13) addItem()
 })
 
+inpNewTask.on('input', () => {
+    toggleInputButtons(inpNewTask.val() == '')
+})
+
 btnAdd.click(() => addItem());
 
-btnReset.click(() => inpNewTask.val(''))
+btnReset.click(() => {
+    inpNewTask.val('')
+    toggleInputButtons(true)
+})
 
 btnCleanup.click(() => clearDone())
 
-btnSort.click(()=>sortTask())
+btnSort.click(() => sortTask())
