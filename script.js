@@ -19,24 +19,27 @@ function addItem() {
 
     //resetting the input box to empty string
     inpNewTask.val('')
+
+    //for btnSort and btnCleanup
+    toggleInputButtons()
 }
 
 function clearDone() {
     $('#ulTasks .done').remove()
+
+    //for btnSort and btnCleanup
+    toggleInputButtons()
 }
 
 function sortTask() {
     $('#ulTasks .done').appendTo(ulTasks)
 }
 
-function toggleInputButtons(valIsEmpty) {
-    if (valIsEmpty) {
-        btnReset.prop('disabled', true)
-        btnAdd.prop('disabled', true)
-    } else {
-        btnReset.prop('disabled', false)
-        btnAdd.prop('disabled', false)
-    }
+function toggleInputButtons() {
+    btnReset.prop('disabled', inpNewTask.val() == '')
+    btnAdd.prop('disabled', inpNewTask.val() == '')
+    btnSort.prop('disabled', ulTasks.children().length < 1)
+    btnCleanup.prop('disabled', ulTasks.children().length < 1)
 }
 
 //Handling "enter" keypress
@@ -44,15 +47,13 @@ inpNewTask.keypress((key) => {
     if (key.which == 13) addItem()
 })
 
-inpNewTask.on('input', () => {
-    toggleInputButtons(inpNewTask.val() == '')
-})
+inpNewTask.on('input', toggleInputButtons)
 
 btnAdd.click(() => addItem());
 
 btnReset.click(() => {
     inpNewTask.val('')
-    toggleInputButtons(true)
+    toggleInputButtons()
 })
 
 btnCleanup.click(() => clearDone())
