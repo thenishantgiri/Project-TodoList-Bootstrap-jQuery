@@ -27,6 +27,6 @@ inpNewTask.keypress((key) => {
     }
 })
 
-btnAdd.click(addItem());
+btnAdd.click(()=>addItem());
 
 btnCleanup.click(() => inpNewTask.val(''))
